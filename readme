@@ -1,0 +1,2 @@
+1.scrapy crawl naval-technology  -O naval-technology.json
+
