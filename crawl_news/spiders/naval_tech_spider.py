@@ -50,8 +50,9 @@ class QuotesSpider(scrapy.Spider):
         return intros
 
     def timeTrans(self, t):
-        ctime = datetime.datetime.strptime(t, "%b %d,%Y")
-        return ctime
+        ctime = datetime.datetime.strptime(t, "%d %B %Y")
+        ct = datetime.datetime.utcfromtimestamp(datetime.datetime.timestamp(ctime))
+        return ct.timestamp()
 
 
 # 运行程序：
